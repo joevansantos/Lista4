@@ -1,21 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int i, j, lenv; char frase[100], branco[] = " ";
+
+void ler ()
+{
+   printf("Digite uma frase:");
+   gets(frase);
+   printf("\n");
+}
+
+void calcule()
+{
+    for (i = 0; i < strlen(frase); i++)
+    {
+        for (j = 0; j < strlen(frase) ; j++)
+            if (frase[i] == branco[0])
+                break;
+
+        if (j == strlen(frase))
+            printf("%c", frase[i]);
+    }
+
+}
 
 int main()
 {
-    char frase[80];
-    int i = 0,j,tam;
-
-    printf("Digite uma frase:")
-    gets(frase);
-    tam = strlen(frase)
-
-    for (i = 0;i  < tam;i++)
-        if (frase[i] == ' ' )
-        {
-            n == i;
-
-        }
-
-
+  ler();
+  calcule();
+  return 0;
 
 }

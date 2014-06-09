@@ -1,40 +1,36 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-char nome[30] ,vog[] = {'a','b'};
-int i = 0;
+int i, j, lenv; char frase[100], vogais[] = "aeiouAEIOU";
 
-void ler()
+void ler ()
 {
-    printf("Digite uma palavra:");
-    gets (nome);
-
+   lenv = strlen(vogais);
+   printf("Digite uma frase:");
+   gets(frase);
+   printf("\n");
 }
-
 
 void calcule()
 {
-   while (i < strlen(nome))
-
+  for (i = 0; i < strlen(frase); i++)
     {
-        if (nome[i] == 'a' || nome[i] == 'e')
-        {
-            nome[i] = ' ' ;
-            i++;
-        }
+
+        for (j = 0; j < lenv; j++)
+            if (frase[i] == vogais[j])
+                break;
+
+        if (j == lenv)
+            printf("%c", frase[i]);
     }
-}
 
-
-void imprime()
-{
-  printf("%s",nome);
 }
 
 int main()
 {
   ler();
   calcule();
-  imprime();
   return 0;
-}
 
+}
